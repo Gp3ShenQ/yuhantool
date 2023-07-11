@@ -1,5 +1,5 @@
 *
-  border: solid 1px black
+  // border: solid 1px black
   box-sizing: border-box
   padding: 0 
   margin: 0
@@ -11,11 +11,22 @@
   width: 100%
   display: flex
   align-items: flex-end
+  background: linear-gradient(-45deg, #c9c9c9, #ffffff)
+  @media screen and (max-width: 1020px)
+    align-items: center
   .markBox
     flex-shrink: 0
     width: 320px
     height: 90px
-    margin: 10px
+    margin: 10px 0 10px 100px
+    cursor: pointer
+    @media screen and (max-width: 1020px)
+      margin-left: 20%
+    @media screen and (max-width: 550px)
+      position: relative
+      margin-right: auto
+      margin-left: auto
+
     .topMark 
       background-image: url("./bgimg/mark.png")
       width: 100%
@@ -23,14 +34,68 @@
 
   .top-rBox
     flex-grow: 1
-    // margin-left: 10%
+    @media screen and (max-width: 1020px)
+      display: none
+
     .top-WordBox 
       position: relative
       display: flex
       align-items: flex-end
       justify-content: space-between
       width: 600px
-      font-size: 20px 
+      font-size: 25px 
       font-weight: 700
       margin-left: auto
+      margin-right: 5%
+
+      .top
+        cursor: pointer
+        &:hover
+          transition: 0.2s
+          color: #ff0000
+
+  .set-Box
+    display: none
+    @media screen and (max-width: 1020px)
+      position: relative
+      display: block
+      margin-left: auto
+      margin-right: 5%
+      width:40px
+      cursor: pointer
+      transition: 1s
+    @media screen and (max-width: 550px)
+      display: none
+
+
+    .set
+      @media screen and (max-width: 1020px)
+        background-color: #2d2c2c
+        width: 100%
+        height: 5px
+        margin: 5px 0
       
+.topSmall
+  display: none
+  @media screen and (max-width: 550px)
+    display: block
+    border-bottom: solid 3px #e6cccc
+    .top-SBox
+      display: flex
+      justify-content: space-around
+      .top
+        cursor: pointer
+
+.index-Bg
+  background-image: url('./bgimg/bgimg.png')
+  height: 100vh
+  position: fixed
+  background-size: cover
+  background-position: center center
+  width: 100%
+  opacity: 0.8
+  .index-Shadow
+    height: 70%
+    width: 100%
+    background-image: linear-gradient(to top, rgba(255,255,255), transparent 200%) , linear-gradient(to top, white, transparent 200%)
+

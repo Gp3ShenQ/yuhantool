@@ -1,6 +1,5 @@
 @charset "UTF-8";
 * {
-  border: solid 1px black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
@@ -17,13 +16,34 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  background: linear-gradient(-45deg, #c9c9c9, #ffffff);
+}
+@media screen and (max-width: 1020px) {
+  .topBox {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 .topBox .markBox {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 320px;
   height: 90px;
-  margin: 10px;
+  margin: 10px 0 10px 100px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1020px) {
+  .topBox .markBox {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .topBox .markBox {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 .topBox .markBox .topMark {
   background-image: url("./bgimg/mark.png");
@@ -34,6 +54,11 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+@media screen and (max-width: 1020px) {
+  .topBox .top-rBox {
+    display: none;
+  }
 }
 .topBox .top-rBox .top-WordBox {
   position: relative;
@@ -47,7 +72,80 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 600px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   margin-left: auto;
+  margin-right: 5%;
+}
+.topBox .top-rBox .top-WordBox .top {
+  cursor: pointer;
+}
+.topBox .top-rBox .top-WordBox .top:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #ff0000;
+}
+.topBox .set-Box {
+  display: none;
+}
+@media screen and (max-width: 1020px) {
+  .topBox .set-Box {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 5%;
+    width: 40px;
+    cursor: pointer;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+}
+@media screen and (max-width: 550px) {
+  .topBox .set-Box {
+    display: none;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .topBox .set-Box .set {
+    background-color: #2d2c2c;
+    width: 100%;
+    height: 5px;
+    margin: 5px 0;
+  }
+}
+
+.topSmall {
+  display: none;
+}
+@media screen and (max-width: 550px) {
+  .topSmall {
+    display: block;
+    border-bottom: solid 3px #e6cccc;
+  }
+  .topSmall .top-SBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .topSmall .top-SBox .top {
+    cursor: pointer;
+  }
+}
+
+.index-Bg {
+  background-image: url("./bgimg/bgimg.png");
+  height: 100vh;
+  position: fixed;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  opacity: 0.8;
+}
+.index-Bg .index-Shadow {
+  height: 70%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 255, 255)), color-stop(200%, transparent)), -webkit-gradient(linear, left bottom, left top, from(white), color-stop(200%, transparent));
+  background-image: linear-gradient(to top, rgb(255, 255, 255), transparent 200%), linear-gradient(to top, white, transparent 200%);
 }
