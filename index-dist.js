@@ -1,1 +1,1 @@
-$(".markBox").on("click",(function(){$("html,body").animate({scrollTop:0},333)}));
+function menuResize(){$(window).on("resize",(function(){const e=window.innerWidth;$(".left-Bar").hasClass("change")&&(e>1020||e<550)&&$(".left-Bar").removeClass("change")}))}$(".markBox").on("click",(function(){$("html,body").animate({scrollTop:0},333)})),$(".set-Box").on("click",(function(){$(".left-Bar").hasClass("change")?$(".left-Bar").removeClass("change"):$(".left-Bar").addClass("change")})),menuResize();

@@ -5,6 +5,10 @@
   margin: 0
   font-family: "微軟正黑體"
 
+// html,body
+//   overflow-x: hidden
+//   width: 100vw
+
 
 .topBox
   background-color: #ffffff
@@ -14,6 +18,8 @@
   background: linear-gradient(-45deg, #c9c9c9, #ffffff)
   @media screen and (max-width: 1020px)
     align-items: center
+  @media screen and (max-width: 550px)
+
   .markBox
     flex-shrink: 0
     width: 320px
@@ -22,15 +28,27 @@
     cursor: pointer
     @media screen and (max-width: 1020px)
       margin-left: 20%
+      tion: relative
+      margin-right: auto
+      margin-left: auto
+      width: 190px
+      height: 60px
     @media screen and (max-width: 550px)
       position: relative
       margin-right: auto
       margin-left: auto
+      width: 190px
+      height: 60px
+      margin-left: 10%
 
     .topMark 
       background-image: url("./bgimg/mark.png")
       width: 100%
       height: 100%
+      @media screen and (max-width: 1020px)
+        background-image: url("./bgimg/phonemark.png")
+        width: 190px
+        height: 60px
 
   .top-rBox
     flex-grow: 1
@@ -85,6 +103,9 @@
       justify-content: space-around
       .top
         cursor: pointer
+        &:hover
+          color: red
+          transition: 0.2s
 
 .index-Bg
   background-image: url('./bgimg/bgimg.png')
@@ -95,7 +116,38 @@
   width: 100%
   opacity: 0.8
   .index-Shadow
+    position: absolute
     height: 70%
     width: 100%
     background-image: linear-gradient(to top, rgba(255,255,255), transparent 200%) , linear-gradient(to top, white, transparent 200%)
 
+.left-Bar 
+  position: fixed
+  width: 100%
+  height: 88%
+  top: 80px
+  right: 0
+  transition-duration: 1s
+  border-top: solid 5px red
+  transform: translateX(100%)
+  &.change
+    transform: translateX(0%)
+    
+  .left-shadowBox
+    background-color: #000000
+    width: 100%
+    height: 100%
+    opacity: 0.7
+
+  .left-wordBox 
+    position: absolute
+    width: 100%
+    top: 0
+    padding: 50px 0 0 50px
+    .leftW
+      line-height: 50px
+      font-size: 20px
+      color: white
+      &:hover
+        text-decoration: underline
+        cursor: pointer
